@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Lyov.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,10 @@ const initialValues = {
   userAge: ''
 }
 
+
 function Lyov() {
+
+
   const [userData, setUserData] = useState(initialValues)
   const [users, setUsers] = useState([]);
   const [ediTableUserData, setEdiTableUserData] = useState({
@@ -60,6 +63,14 @@ function Lyov() {
   }
   console.log('users:', users);
 
+    // 3. Create out useEffect function
+  useEffect(() => {
+    fetch("http://localhost:4000/")
+    .then(response => response.json())
+        // 4. Setting *dogImage* to the image url that we received from the response above
+    .then(data => console.log(data))
+  },[])
+
   return (
     <div className='container' >
       <div className='content'>
@@ -75,7 +86,7 @@ function Lyov() {
                 <th scope="col">Actions</th>
               </tr>
             </tbody>
-            <tbody className = 'users' >
+            <tbody className='users' >
               {users.map((user, index) => (
                 <tr key={index} >
                   <td>
@@ -133,7 +144,7 @@ function Lyov() {
             }))}
             value={userData.userAge}
           />
-          
+
           <input placeholder='Write your Salary'
             onChange={(e) => setUserData((prevState) => ({
               ...prevState,
