@@ -1,13 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Lyov from './Lyov/Lyov';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./CRUD/App";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-   <React.StrictMode>
-  <Lyov />
-   </React.StrictMode>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
-
-
