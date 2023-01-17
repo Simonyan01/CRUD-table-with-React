@@ -1,168 +1,167 @@
 * {
-    padding: 0;
-    box-sizing: border-box;
-    font-family: cursive;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
 }
 
 body {
-    background-color: #19191d;
+  background-color: #19191d;
 }
 
 .container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .content {
-    justify-content: space-between;
-    display: flex;
-    width: 700px;
-    margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin-top: 100px;
 }
 
 .table-data {
-    position: relative;
-    right: 100px;
-    margin: 6px;
-
+  position: relative;
+  right: 100px;
 }
 
 form {
-    position: relative;
-    left: 70px;
-    display: flex;
-    flex-direction: column;
-
+  position: relative;
+  left: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 input {
-    padding: 4px;
-    margin: 10px 0;
-    font-size: medium;
-    color: rgb(0, 0, 0);
+  border-radius: 15px;
+  outline-style: none;
+  border: none;
+  padding: 7px;
+  margin: 15px 0;
+  font-size: medium;
+  color: rgb(0, 0, 0, 1);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(197, 197, 197, 0.651);
 }
 
 .buttons-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 15px 0;
-
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 15px 0;
 }
-
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: large;
-
-}
-
-
-th {
-    min-width: 85px;
-    border: 4px solid #19191d;
-    border-radius: 16px;
-    padding: 5px;
-    background-color: rgb(62, 69, 77);
-    color: rgb(207, 195, 195);
-    transition: background .3s linear;
-    cursor: default;
-
-}
-
-th:hover {
-    background-color: rgb(47, 126, 216);
-
-}
-
-th:first-child {
-    min-width: 25px;
+  width: 100%;
+  font-size: large;
 }
 
 tbody {
-    color: rgb(123, 116, 116);
-    cursor: default;
-    text-align: center;
+  color: rgb(123, 116, 116);
+  cursor: default;
+  text-align: center;
 }
 
+th {
+  min-width: 85px;
+  border: 4px solid #19191d;
+  border-radius: 16px;
+  padding: 5px;
+  background-color: rgb(62, 69, 77);
+  color: rgb(207, 195, 195);
+  transition: background 0.3s linear;
+  cursor: default;
+}
 
+th:hover {
+  background-color: rgb(47, 126, 216);
+}
+
+th:first-child {
+  min-width: 25px;
+}
+
+.users {
+  position: relative;
+  top: 8px;
+}
 
 td {
-    transition: color .2s linear;
-    border: 1px solid #4e4e52;
-    cursor: default;
-    box-shadow: 0 0 10px rgb(163, 159, 159);
-
+  color: rgb(150, 145, 145);
+  transition: color 0.2s linear;
+  border: 1px solid #4e4e52;
+  cursor: default;
+  padding: 0 10px;
+  box-shadow: 0 0 12px rgb(163, 159, 159);
 }
 
 td:hover {
-    color: rgb(239, 232, 232);
+  color: rgb(239, 232, 232);
 }
 
-
 .clearButton {
-    padding: 2px 15px;
-    margin: 4px 0;
-    color: rgb(155, 152, 152);
-    transition: background .4s linear;
-    background: transparent;
-    border: 1px solid #19191d;
-    font-size: medium;
-
+  padding: 2px 15px;
+  margin: 4px 0;
+  color: rgb(155, 152, 152);
+  transition: all 0.3s linear;
+  background: transparent;
+  border: 1px solid #19191d;
+  font-size: medium;
+  letter-spacing: 1px;
 }
 
 .clearButton:hover {
-    background: rgb(208, 179, 133);
-    cursor: default;
-    color: rgb(71, 67, 67);
+  background: rgb(208, 179, 133);
+  cursor: pointer;
+  color: rgb(32, 31, 31);
+  transform: scale(1.15);
+  border-radius: 12px;
 }
 
 .editAddButton {
-    margin: 4px 0;
-    padding: 2px 12px;
-    color: rgb(155, 152, 152);
-    background: transparent;
-    border: 1px solid #19191d;
-    transition: background .4s linear;
-    font-size: medium;
-
-
+  padding: 2px 12px;
+  margin: 4px 0;
+  color: rgb(155, 152, 152);
+  transition: all 0.3s linear;
+  background: transparent;
+  border: 1px solid #19191d;
+  font-size: medium;
+  letter-spacing: 1px;
 }
 
 .editAddButton:hover {
-    background: rgb(208, 179, 133);
-    color: rgb(71, 67, 67);
-    cursor: default;
-
+  background: rgb(208, 179, 133);
+  color: rgb(32, 31, 31);
+  cursor: pointer;
+  transform: scale(1.15);
+  border-radius: 12px;
 }
 
 .editButton {
-    margin: 7px 5px;
-    padding: 2px 12px;
-    background: transparent;
-    border: 1px solid rgb(27, 21, 21);
-    transition: color .3s linear;
-    color: rgb(180, 174, 167);
-
+  position: relative;
+  left: 8px;
+  background: transparent;
+  border: none;
+  transition: color .3s linear;
+  color: rgb(180, 174, 167);
 }
 
 .editButton:hover {
-    color: rgb(240, 188, 92);
-
+  color: rgb(243, 171, 38);
+  cursor: pointer;
 }
 
-
 .removeButton {
-    margin: 7px 5px;
-    padding: 2px 12px;
-    background: transparent;
-    border: 1px solid #19191d;
-    transition: color .3s linear;
+  position: relative;
+  left: 10px;
+  padding: 12px 17px;
+  background: transparent;
+  border: none;
+  transition: color .3s linear;
 }
 
 .removeButton:hover {
-    color: wheat;
+  cursor: pointer;
+  color: rgb(236, 207, 152);
 }

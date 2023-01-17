@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import "./App.css";
 
 const initialValues = {
   userName: "",
@@ -18,11 +18,12 @@ function App() {
     IsEdit: false,
     userIndex: null,
   });
+
+  const isFilledFields = userData.userName && userData.userSurname && userData.userSalary;
+
   const handleRemoveClick = (index) => {
     setUsers(users.filter((user, userIndex) => userIndex !== index));
   };
-  const isFilledFields =
-    userData.userName && userData.userSurname && userData.userSalary;
 
   const handleSubmitUser = (e) => {
     e.preventDefault();
@@ -30,9 +31,7 @@ function App() {
       if (ediTableUserData.IsEdit) {
         const editedData = users;
         editedData.splice(ediTableUserData.userIndex, 1, userData);
-
         setUsers(editedData);
-
         setEdiTableUserData({
           IsEdit: false,
           userIndex: null,
@@ -53,18 +52,9 @@ function App() {
       userIndex: index,
     });
   };
-  console.log("users:", users);
-
-  // 3. Create out useEffect function
-  useEffect(() => {
-    fetch("http://localhost:4000/")
-      .then((response) => response.json())
-      // 4. Setting *dogImage* to the image url that we received from the response above
-      .then((data) => console.log(data));
-  }, []);
 
   return (
-    <div className="container">
+    <section className="container">
       <div className="content">
         <div className="table-data">
           <table key={users.id}>
@@ -119,7 +109,6 @@ function App() {
             }
             value={userData.userName}
           />
-
           <input
             placeholder="Write your Surname"
             onChange={(e) =>
@@ -130,7 +119,6 @@ function App() {
             }
             value={userData.userSurname}
           />
-
           <input
             placeholder="Write your Age"
             onChange={(e) =>
@@ -141,7 +129,6 @@ function App() {
             }
             value={userData.userAge}
           />
-
           <input
             placeholder="Write your Salary"
             onChange={(e) =>
@@ -152,7 +139,6 @@ function App() {
             }
             value={userData.userSalary}
           />
-
           <div className="buttons-wrapper">
             <button className="clearButton" type="reset">
               Clear
@@ -171,7 +157,7 @@ function App() {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }
 
