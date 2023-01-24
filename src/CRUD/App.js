@@ -19,7 +19,8 @@ function App() {
     userIndex: null,
   });
 
-  const isFilledFields = userData.userName && userData.userSurname && userData.userSalary;
+  const isFilledFields =
+    userData.userName && userData.userSurname && userData.userSalary;
 
   const handleRemoveClick = (index) => {
     setUsers(users.filter((user, userIndex) => userIndex !== index));
