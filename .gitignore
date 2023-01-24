@@ -1,6 +1,6 @@
 # dependencies
 /node_modules
-/src/package-lock.json
+/package-lock.json
 
 # misc
 .DS_Store
